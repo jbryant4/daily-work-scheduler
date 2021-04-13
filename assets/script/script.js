@@ -22,6 +22,8 @@ function buildDay() {
         var textCol = $('<textarea>');
         textCol.addClass("col-lg-9 description");
         textCol.attr("text-hour", i)
+        textCol.attr("id", i);
+
         
         var btnCol = $('<button>');
         btnCol.addClass("col-lg-1 saveBtn");
@@ -54,5 +56,21 @@ function colorHours(rowDiv, i) {
     }
 }
 
+$("#container").on("click","button", function(event){
+    event.preventDefault();
 
+    console.log(this)
+    var hourIndex = $(this).attr("btn-hour");
+    console.log(hourIndex)
+
+    var hourText = $("#"+hourIndex).val();
+    console.log(hourText);
+
+    saveText(hourIndex, hourText)
+});
+
+
+function saveText(hourIndex, hourText) {
+
+}
 buildDay();
