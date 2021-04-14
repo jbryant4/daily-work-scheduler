@@ -67,6 +67,7 @@ function loadTask() {
 
 function colorHours(rowDiv, i) {
 
+
     if (i < currentHour) {
         rowDiv.addClass("past");
     } else if (i > currentHour) {
@@ -108,4 +109,6 @@ function saveText(hourIndex, hourText) {
     }
 
 }
+
+
 buildDay();
